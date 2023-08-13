@@ -77,3 +77,13 @@
   filter: invert(35%) sepia(0%) saturate(577%) hue-rotate(153deg)
     brightness(94%) contrast(87%);
 }
+
+#icon-dark {
+  filter: invert(70%) sepia(0%) saturate(1%) hue-rotate(237deg) brightness(89%)
+    contrast(84%);
+}
+
+#icon-light {
+  filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(163deg) brightness(98%)
+    contrast(83%);
+}
