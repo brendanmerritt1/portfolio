@@ -4,11 +4,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        "dark-gray": "#1f1f1f",
-        "light-gray": "#999999",
+        "dark-gray": "#3b3b3b",
+        "darker-gray": "#1f1f1f",
+        "light-gray": "#555555",
+        "lighter-gray": "#999999",
+        "medium-gray": "#5a5a5a",
+        "off-white": "#dadada",
+      },
+      keyframes: {
+        rotation: {
+          "0%": { transform: "rotate(0)" },
+          "100%": { transform: "rotate(-180deg)" },
+        },
+        rotation2: {
+          "0%": { transform: "rotate(180deg)" },
+          "100%": { transform: "rotate(0)" },
+        },
+      },
+      animation: {
+        "spin-dark": ".25s cubic-bezier(.4,0,.2,1) forwards rotation",
+        "spin-light": ".25s cubic-bezier(.4,0,.2,1) forwards rotation2",
       },
     },
   },
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: [],
   darkMode: "class",
 };

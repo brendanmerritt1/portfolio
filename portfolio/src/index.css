@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Karla", sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 200;
 
   color-scheme: light dark;
   /* color: rgba(255, 255, 255, 0.87); */
@@ -16,4 +16,64 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+#dark {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 15%,
+    #000 35%,
+    #000 65%,
+    transparent 85%
+  );
+  filter: invert(70%) sepia(0%) saturate(1%) hue-rotate(237deg) brightness(89%)
+    contrast(84%);
+}
+
+#light {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 15%,
+    #000 35%,
+    #000 65%,
+    transparent 85%
+  );
+  filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(163deg) brightness(98%)
+    contrast(83%);
+}
+
+#underline {
+  display: inline-block;
+  position: relative;
+}
+
+#underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.y {
+  stroke: #555555;
+}
+
+#send-light {
+  filter: invert(98%) sepia(0%) saturate(0%) hue-rotate(141deg) brightness(95%)
+    contrast(81%);
+}
+
+#send-dark {
+  filter: invert(35%) sepia(0%) saturate(577%) hue-rotate(153deg)
+    brightness(94%) contrast(87%);
 }
