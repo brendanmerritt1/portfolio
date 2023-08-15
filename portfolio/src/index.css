@@ -8,8 +8,6 @@
   font-weight: 200;
 
   color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
-  /* background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -78,6 +76,16 @@
     brightness(94%) contrast(87%);
 }
 
+#arrow-light {
+  filter: invert(100%) sepia(61%) saturate(2%) hue-rotate(70deg)
+    brightness(107%) contrast(100%);
+}
+
+#arrow-dark {
+  filter: invert(48%) sepia(0%) saturate(0%) hue-rotate(224deg) brightness(86%)
+    contrast(82%);
+}
+
 #icon-dark {
   filter: invert(70%) sepia(0%) saturate(1%) hue-rotate(237deg) brightness(89%)
     contrast(84%);
@@ -86,4 +94,87 @@
 #icon-light {
   filter: invert(30%) sepia(0%) saturate(0%) hue-rotate(163deg) brightness(98%)
     contrast(83%);
+}
+
+#pill-button-hover,
+#pill-button-hover-dark,
+#rect-button-hover,
+#rect-button-hover-dark {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+#pill-button-hover:before,
+#pill-button-hover-dark:before,
+#rect-button-hover:before,
+#rect-button-hover-dark:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #dadada;
+  border-radius: 9999px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+#rect-button-hover:before,
+#rect-button-hover-dark:before {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+#pill-button-hover:hover,
+#rect-button-hover:hover {
+  color: #6e6e6e;
+}
+
+#pill-button-hover:hover:before,
+#pill-button-hover-dark:hover:before {
+  -webkit-transform: scaleX(1.05);
+  transform: scaleX(1.05);
+}
+
+#rect-button-hover:hover:before,
+#rect-button-hover-dark:hover:before {
+  -webkit-transform: scaleX(1.01);
+  transform: scaleX(1.01);
+}
+
+#pill-button-hover-dark:before {
+  background: #1f1f1f;
+}
+
+#rect-button-hover-dark:before {
+  background: #080808;
+}
+
+#rect-button-hover:before {
+  background: #fafafa;
+}
+
+#pill-button-hover-dark:hover,
+#rect-button-hover-dark:hover {
+  color: #dadada;
 }

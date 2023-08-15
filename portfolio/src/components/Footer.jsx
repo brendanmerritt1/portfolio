@@ -5,10 +5,10 @@ import { ReactComponent as LinkedIn } from "../assets/LinkedIn.svg";
 export default function Footer(props) {
   return (
     <div className="flex h-16 items-center justify-between px-7">
-      <span className="flex text-xl font-normal text-dark-gray dark:text-lighter-gray">
+      <span className="flex text-xl font-normal text-dark-gray dark:text-lightest-gray">
         Made with
         <Heart
-          id={`${props.dark ? "icon-dark" : "icon-light"}`}
+          id={`${props.darkMode.dark ? "icon-dark" : "icon-light"}`}
           className="h-6 px-2"
         />
         in NC
@@ -21,7 +21,7 @@ export default function Footer(props) {
           rel="noopener noreferrer"
         >
           <Github
-            id={`${props.dark ? "icon-dark" : "icon-light"}`}
+            id={`${props.darkMode.dark ? "icon-dark" : "icon-light"}`}
             className="h-9 cursor-pointer"
           />
         </a>
@@ -32,7 +32,7 @@ export default function Footer(props) {
           rel="noopener noreferrer"
         >
           <LinkedIn
-            id={`${props.dark ? "icon-dark" : "icon-light"}`}
+            id={`${props.darkMode.dark ? "icon-dark" : "icon-light"}`}
             className="h-9 cursor-pointer"
           />
         </a>

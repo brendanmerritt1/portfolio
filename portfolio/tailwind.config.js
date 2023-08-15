@@ -7,7 +7,8 @@ export default {
         "dark-gray": "#3b3b3b",
         "darker-gray": "#1f1f1f",
         "light-gray": "#555555",
-        "lighter-gray": "#999999",
+        "lighter-gray": "#858585",
+        "lightest-gray": "#999999",
         "medium-gray": "#5a5a5a",
         "off-white": "#dadada",
       },
@@ -20,10 +21,22 @@ export default {
           "0%": { transform: "rotate(180deg)" },
           "100%": { transform: "rotate(0)" },
         },
+        rotationArrowCC: {
+          "0%": { transform: "rotate(0)" },
+          "100%": { transform: "rotate(90deg)" },
+        },
+        rotationArrowC: {
+          "0%": { transform: "rotate(90deg)" },
+          "100%": { transform: "rotate(0)" },
+        },
       },
       animation: {
-        "spin-dark": ".25s cubic-bezier(.4,0,.2,1) forwards rotation",
-        "spin-light": ".25s cubic-bezier(.4,0,.2,1) forwards rotation2",
+        "spin-dark": "0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards rotation",
+        "spin-light": "0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards rotation2",
+        "rotate-arrow-CC":
+          "0.4s cubic-bezier(0, 0, 0.2, 1) forwards rotationArrowCC",
+        "rotate-arrow-C":
+          "0.4s cubic-bezier(0, 0, 0.2, 1) forwards rotationArrowC",
       },
     },
   },
