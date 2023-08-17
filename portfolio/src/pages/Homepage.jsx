@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Mountain from "../components/Mountain";
 import { ReactComponent as Arrow } from "../assets/Arrow.svg";
 
-function Homepage() {
+export default function Homepage() {
+  // Dark Mode state
   const [dark, setDark] = useState(null);
   const [buttonHover, setButtonHover] = useState(null);
 
+  // Footer visibility state
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Dark Mode utility functions
   const handleDark = (bool) => {
     setDark(!bool);
     dark
@@ -34,6 +40,20 @@ function Homepage() {
     }
   };
 
+  // Footer visibility helper function
+  const listenToScroll = () => {
+    let heightToShow = 600;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (winScroll > heightToShow) {
+      !isVisible && setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  // Dark Mode animation render
   useEffect(() => {
     if (buttonHover !== null) {
       if (buttonHover) {
@@ -44,10 +64,16 @@ function Homepage() {
     }
   }, [buttonHover]);
 
+  // Footer visibility on scroll render
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
+
   return (
-    <div className="flex h-screen flex-col bg-off-white dark:bg-darker-gray">
+    <div className="flex h-screen flex-col overflow-y-auto overflow-x-hidden bg-off-white dark:bg-darker-gray">
       <Navbar darkMode={{ dark, handleDark }} colors={colors} />
-      <div className="dark:text-lightest-gray flex h-full flex-col justify-center pl-[15%] text-lighter-gray">
+      <div className="flex h-full items-center justify-between pl-[15%] text-lighter-gray dark:text-lightest-gray">
         <div className="flex w-fit flex-col">
           <span className="w-fit text-5xl font-light">HI, I'M A</span>
           <span className="w-fit text-7xl font-normal">web</span>
@@ -58,7 +84,7 @@ function Homepage() {
             onMouseEnter={() => setButtonHover(true)}
             onMouseLeave={() => setButtonHover(false)}
             id={colors(buttonHover, dark, "rect-button")}
-            className="mt-4 flex w-72 rounded-l-xl rounded-r-xl bg-light-gray py-3 text-2xl font-bold text-white dark:bg-[#aeaeae] dark:text-dark-gray"
+            className="z-10 mt-4 flex w-72 rounded-l-xl rounded-r-xl bg-light-gray py-3 text-2xl font-bold text-white dark:bg-[#aeaeae] dark:text-dark-gray"
           >
             <span className="flex items-center justify-evenly">
               What I've Made
@@ -71,10 +97,9 @@ function Homepage() {
             </span>
           </button>
         </div>
+        <Mountain />
       </div>
-      <Footer darkMode={{ dark, handleDark }} />
+      {isVisible && <Footer darkMode={{ dark, handleDark }} />}
     </div>
   );
 }
-
-export default Homepage;

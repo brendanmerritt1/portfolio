@@ -82,7 +82,7 @@
 }
 
 #arrow-dark {
-  filter: invert(48%) sepia(0%) saturate(0%) hue-rotate(224deg) brightness(86%)
+  filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(106deg) brightness(95%)
     contrast(82%);
 }
 
@@ -177,4 +177,26 @@
 #pill-button-hover-dark:hover,
 #rect-button-hover-dark:hover {
   color: #dadada;
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#aeaeae];
+    @apply dark:bg-[#191919];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-gray;
+    @apply dark:bg-light-gray;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-medium-gray;
+    @apply dark:bg-dark-gray;
+  }
 }

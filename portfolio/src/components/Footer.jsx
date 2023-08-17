@@ -4,7 +4,7 @@ import { ReactComponent as LinkedIn } from "../assets/LinkedIn.svg";
 
 export default function Footer(props) {
   return (
-    <div className="flex h-16 items-center justify-between px-7">
+    <div className="flex h-16 items-center justify-between px-7 sticky">
       <span className="flex text-xl font-normal text-dark-gray dark:text-lightest-gray">
         Made with
         <Heart
