@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useRef } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { angleToRadians } from "../utils/angle.js";
 import MountainModel from "../utils/MountainModel.jsx";
@@ -9,14 +9,12 @@ function Frame(props) {
     if (props.orbitControlsRef.current) {
       const { x } = state.mouse;
       props.orbitControlsRef.current.setAzimuthalAngle(
-        x * -angleToRadians(45),
+        -2.51279636717436 + x * -angleToRadians(45),
       );
       props.orbitControlsRef.current.update();
     }
   });
 }
-
-//-2.51279636717436 + 
 
 export default function Mountain() {
   const orbitControlsRef = useRef(null);
@@ -28,7 +26,7 @@ export default function Mountain() {
   }, []);
 
   return (
-    <div className="absolute left-0 h-full w-full top-20">
+    <div className="hero-element absolute left-0 top-20 h-full w-full">
       <Canvas>
         <Suspense fallback={null}>
           <PerspectiveCamera makeDefault fov={3} position={[-8, 2, -11]} />

@@ -81,9 +81,24 @@
     brightness(107%) contrast(100%);
 }
 
+#arrow-light-gray {
+  filter: invert(64%) sepia(1%) saturate(0%) hue-rotate(336deg) brightness(95%)
+    contrast(93%);
+}
+
+#arrow-bg-light {
+  filter: invert(96%) sepia(1%) saturate(0%) hue-rotate(148deg) brightness(92%)
+    contrast(92%);
+}
+
 #arrow-dark {
   filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(106deg) brightness(95%)
     contrast(82%);
+}
+
+#arrow-bg-dark {
+  filter: invert(0%) sepia(4%) saturate(3962%) hue-rotate(318deg)
+    brightness(92%) contrast(76%);
 }
 
 #icon-dark {

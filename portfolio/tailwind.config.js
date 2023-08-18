@@ -29,6 +29,10 @@ export default {
           "0%": { transform: "rotate(90deg)" },
           "100%": { transform: "rotate(0)" },
         },
+        fadeInLeft: {
+          "0%": { transform: "translateX(-50px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
       },
       animation: {
         "spin-dark": "0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards rotation",
@@ -37,6 +41,8 @@ export default {
           "0.4s cubic-bezier(0, 0, 0.2, 1) forwards rotationArrowCC",
         "rotate-arrow-C":
           "0.4s cubic-bezier(0, 0, 0.2, 1) forwards rotationArrowC",
+        "show-arrow":
+          "fadeInLeft 0.4s cubic-bezier(0.550, 0.055, 0.675, 0.190)",
       },
     },
   },
