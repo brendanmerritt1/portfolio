@@ -34,32 +34,41 @@ export default function Navbar(props) {
         <button
           id={`${props.darkMode.dark ? "dark" : "light"}`}
           className="h-8 w-24 cursor-pointer"
-          onClick={() => handleDark(props.darkMode.dark, props.darkMode.setDark)}
+          onClick={() =>
+            handleDark(props.darkMode.dark, props.darkMode.setDark)
+          }
         >
           <div id="hd">
             <LightDarkMode />
           </div>
         </button>
-        <span
-          id="underline"
-          className="cursor-pointer font-light text-light-gray after:bg-light-gray dark:font-normal dark:text-lightest-gray dark:after:bg-lightest-gray"
-        >
-          About
-        </span>
-        <button
-          onMouseEnter={() => setButtonHover(true)}
-          onMouseLeave={() => setButtonHover(false)}
-          id={props.colors(buttonHover, props.darkMode.dark, "pill-button")}
-          className="h-10 w-40 rounded-full bg-light-gray text-xl font-bold text-off-white dark:bg-lightest-gray dark:text-medium-gray"
-        >
-          <span className="flex items-center justify-evenly">
-            Let's Talk
-            <Send
-              id={props.colors(buttonHover, props.darkMode.dark, "send")}
-              className="h-6"
-            />
+        <Link to={"/about"}>
+          <span
+            id="underline"
+            className="cursor-pointer font-light text-light-gray after:bg-light-gray dark:font-normal dark:text-lightest-gray dark:after:bg-lightest-gray"
+          >
+            About
           </span>
-        </button>
+        </Link>
+        <Link to={"mailto:brendanmerritt1@gmail.com"}>
+          <button
+            onMouseEnter={() => setButtonHover(true)}
+            onMouseLeave={() => setButtonHover(false)}
+            onClick={() =>
+              (window.location.href = "mailto:brendanmerritt1@gmail.com")
+            }
+            id={props.colors(buttonHover, props.darkMode.dark, "pill-button")}
+            className="h-10 w-40 rounded-full bg-light-gray text-xl font-bold text-off-white dark:bg-lightest-gray dark:text-medium-gray"
+          >
+            <span className="flex items-center justify-evenly">
+              Let's Talk
+              <Send
+                id={props.colors(buttonHover, props.darkMode.dark, "send")}
+                className="h-6"
+              />
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   );

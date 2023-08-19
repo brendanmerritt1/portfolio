@@ -2,9 +2,14 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Mountain from "../components/Mountain";
+import Project from "../components/Project";
 import { ReactComponent as Arrow } from "../assets/Arrow.svg";
 import { colors } from "../utils/DarkModeUtils";
-import { inViewProps, picOrVid } from "../utils/IntersectionObs";
+import Lenis from "@studio-freight/lenis";
+
+// TODO:
+// Clone nonogram game and create a new properly resized video
+// Clone simple shell and create a new properly resized video
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -13,24 +18,17 @@ export default function Homepage() {
   const [dark, setDark] = useState(null);
   const [buttonHover, setButtonHover] = useState(null);
 
-  // Project hover states
-  const [project1, setProject1] = useState(false);
+  // Smooth Scroll setup
+  const lenis = new Lenis({
+    lerp: 0.1,
+  });
 
-  // Footer visibility helper function
-  const listenToScrollFooter = () => {
-    let heightToShow = 200;
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
+  lenis.on("scroll", ScrollTrigger.update);
 
-    if (winScroll > heightToShow) {
-      !isVisible && setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  // Displays picture or video depending on visibility in viewport
-  const obs = inViewProps();
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
 
   // Main button arrow animation
   useEffect(() => {
@@ -43,12 +41,6 @@ export default function Homepage() {
     }
   }, [buttonHover]);
 
-  // Footer visibility on scroll render
-  useEffect(() => {
-    window.addEventListener("scroll", listenToScrollFooter);
-    return () => window.removeEventListener("scroll", listenToScrollFooter);
-  }, []);
-
   // ScrollTrigger hero opacity animation
   const main = useRef();
   useLayoutEffect(() => {
@@ -60,10 +52,31 @@ export default function Homepage() {
           scrollTrigger: {
             trigger: hero,
             start: "top top",
-            end: "45% top",
+            end: "800px top",
             scrub: true,
           },
           opacity: 0,
+        });
+      });
+    }, main);
+
+    return () => ctx.revert();
+  }, []);
+
+  // ScrollTrigger video play
+  useLayoutEffect(() => {
+    const videos = gsap.utils.toArray(".video-container");
+    const ctx = gsap.context(() => {
+      videos.forEach((videoDiv) => {
+        let video = videoDiv.querySelector("video");
+        ScrollTrigger.create({
+          trigger: video,
+          start: "top bottom",
+          end: "top top",
+          onEnter: () => video.play(),
+          onEnterBack: () => video.play(),
+          onLeave: () => video.pause(),
+          onLeaveBack: () => video.pause(),
         });
       });
     }, main);
@@ -87,6 +100,7 @@ export default function Homepage() {
             <button
               onMouseEnter={() => setButtonHover(true)}
               onMouseLeave={() => setButtonHover(false)}
+              onClick={() => lenis.scrollTo(".recent-project")}
               id={colors(buttonHover, dark, "rect-button")}
               className="hero-element z-10 mt-4 flex w-72 rounded-l-xl rounded-r-xl bg-light-gray py-3 text-2xl font-bold text-white dark:bg-[#aeaeae] dark:text-dark-gray"
             >
@@ -105,33 +119,55 @@ export default function Homepage() {
         </div>
         <Footer darkMode={dark} />
       </div>
-      <div className="relative flex h-screen flex-col items-center pt-64">
-        <div
-          onMouseEnter={() => setProject1(true)}
-          onMouseLeave={() => setProject1(false)}
-          className="ml-16 flex w-fit cursor-pointer justify-center gap-24"
-        >
-          <div ref={obs.ref}>{picOrVid(obs.inView)}</div>
-          <div className="flex flex-col justify-center gap-3">
-            <span className="text-2xl font-normal text-lighter-gray">
-              SOFTWARE DEVELOPMENT
-            </span>
-            <span className="flex items-center gap-7 text-4xl font-bold text-dark-gray dark:text-lightest-gray">
-              Animated Wallpaper Shader
-              {project1 ? (
-                <Arrow
-                  id={`${!dark ? "arrow-dark" : "arrow-light-gray"}`}
-                  className="h-9 animate-show-arrow"
-                />
-              ) : (
-                <Arrow
-                  id={`${!dark ? "arrow-bg-light" : "arrow-bg-dark"}`}
-                  className="h-9"
-                />
-              )}
-            </span>
-          </div>
-        </div>
+      <div className="recent-project relative flex h-full flex-col items-center gap-52 py-64">
+        <Project
+          darkMode={dark}
+          source={{
+            mp4: "/solar-system-wallpaper-video.mp4",
+            webm: "/solar-system-wallpaper-video.mp4",
+          }}
+          subtitle={"SOFTWARE DEVELOPMENT"}
+          title={"Animated Wallpaper Shader"}
+        />
+        <Project
+          darkMode={dark}
+          source={{
+            mp4: "/cloudburst-video.mp4",
+            webm: "/cloudburst-video.webm",
+          }}
+          subtitle={"WEB DEVELOPMENT"}
+          title={"Cloudburst Lawn Sprinkler Systems"}
+        />
+        <Project
+          darkMode={dark}
+          source={{
+            mp4: "/mona-portfolio-video.mp4",
+            webm: "/mona-portfolio-video.webm",
+          }}
+          subtitle={"WEB DEVELOPMENT"}
+          title={"Mona Dougani's Portfolio"}
+        />
+        <Project
+          darkMode={dark}
+          source={{ mp4: "/covid-19-video.mp4", webm: "/covid-19-video.webm" }}
+          subtitle={"WEB DEVELOPMENT"}
+          title={"COVID-19 Dashboard"}
+        />
+        <Project
+          darkMode={dark}
+          source={{
+            mp4: "/ip-tracker-video.mp4",
+            webm: "/ip-tracker-video.webm",
+          }}
+          subtitle={"WEB DEVELOPMENT"}
+          title={"IP Tracker Dashboard"}
+        />
+        <Project
+          darkMode={dark}
+          source={{ mp4: "/nonogram-video.mp4", webm: "/nonogram-video.webm" }}
+          subtitle={"SOFTWARE DEVELOPMENT"}
+          title={"Nonogram Game"}
+        />
       </div>
     </div>
   );

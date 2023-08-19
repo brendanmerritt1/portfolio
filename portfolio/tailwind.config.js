@@ -44,6 +44,9 @@ export default {
         "show-arrow":
           "fadeInLeft 0.4s cubic-bezier(0.550, 0.055, 0.675, 0.190)",
       },
+      lineHeight: {
+        12: "3rem",
+      },
     },
   },
   plugins: [],
