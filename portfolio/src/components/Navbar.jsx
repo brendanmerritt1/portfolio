@@ -8,14 +8,14 @@ export default function Navbar(props) {
   const [buttonHover, setButtonHover] = useState(false);
 
   useEffect(() => {
-    if (props.darkMode.dark !== null) {
-      if (props.darkMode.dark) {
+    if (props.dark !== null) {
+      if (props.dark) {
         document.getElementById("hd").className = "animate-spin-dark";
       } else {
         document.getElementById("hd").className = "animate-spin-light";
       }
     }
-  }, [props.darkMode.dark]);
+  }, [props.dark]);
 
   return (
     <div className="fixed top-0 z-20 flex h-20 w-full pl-8">
@@ -32,10 +32,10 @@ export default function Navbar(props) {
       </div>
       <div className="flex w-1/4 items-center justify-evenly text-xl font-normal tracking-wider">
         <button
-          id={`${props.darkMode.dark ? "dark" : "light"}`}
+          id={`${props.dark ? "dark" : "light"}`}
           className="h-8 w-24 cursor-pointer"
           onClick={() =>
-            handleDark(props.darkMode.dark, props.darkMode.setDark)
+            handleDark(props.dark, props.setDark)
           }
         >
           <div id="hd">
@@ -57,13 +57,13 @@ export default function Navbar(props) {
             onClick={() =>
               (window.location.href = "mailto:brendanmerritt1@gmail.com")
             }
-            id={props.colors(buttonHover, props.darkMode.dark, "pill-button")}
+            id={props.colors(buttonHover, props.dark, "pill-button")}
             className="h-10 w-40 rounded-full bg-light-gray text-xl font-bold text-off-white dark:bg-lightest-gray dark:text-medium-gray"
           >
             <span className="flex items-center justify-evenly">
               Let's Talk
               <Send
-                id={props.colors(buttonHover, props.darkMode.dark, "send")}
+                id={props.colors(buttonHover, props.dark, "send")}
                 className="h-6"
               />
             </span>
