@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ProjectList from "../components/homepage/HomepageProjectList";
+import HomepageProjectList from "../components/homepage/HomepageProjectList";
 import { colors } from "../utils/DarkModeUtils";
 import HomepageHeroContent from "../components/homepage/HomepageHeroContent";
 
@@ -12,7 +12,7 @@ export default function Homepage(props) {
         <HomepageHeroContent dark={props.dark} colors={colors} lenis={props.lenis} />
         <Footer dark={props.dark} />
       </div>
-      <ProjectList dark={props.dark} setDark={props.setDark} />
+      <HomepageProjectList dark={props.dark} setDark={props.setDark} />
     </div>
   );
 }

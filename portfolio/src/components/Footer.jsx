@@ -33,11 +33,11 @@ export default function Footer(props) {
       className="fixed bottom-0 flex h-16 w-full items-center justify-between px-7"
       ref={main}
     >
-      <span className="footer-element invisible flex text-xl font-normal text-dark-gray dark:text-lightest-gray">
+      <span className="footer-element invisible flex text-xl font-normal text-dark-gray dark:text-lightest-gray xl:text-base">
         Made with
         <Heart
           id={`${props.dark ? "icon-dark" : "icon-light"}`}
-          className="h-6 px-2"
+          className="h-6 px-2 xl:h-5"
         />
         in NC
       </span>
@@ -50,7 +50,7 @@ export default function Footer(props) {
         >
           <Github
             id={`${props.dark ? "icon-dark" : "icon-light"}`}
-            className="h-9 cursor-pointer"
+            className="h-9 cursor-pointer xl:h-8"
           />
         </a>
         <a
@@ -61,7 +61,7 @@ export default function Footer(props) {
         >
           <LinkedIn
             id={`${props.dark ? "icon-dark" : "icon-light"}`}
-            className="h-9 cursor-pointer"
+            className="h-9 cursor-pointer xl:h-8"
           />
         </a>
       </div>

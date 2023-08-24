@@ -1,8 +1,8 @@
 import { Suspense, useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import { angleToRadians } from "../utils/angle.js";
-import MountainModel from "../utils/MountainModel.jsx";
+import { angleToRadians } from "../../utils/angle.js";
+import MountainModel from "../../utils/MountainModel.jsx";
 
 function Frame(props) {
   useFrame((state) => {

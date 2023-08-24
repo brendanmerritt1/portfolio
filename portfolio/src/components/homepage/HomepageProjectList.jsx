@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import Project from "./HomepageProject";
 
 export default function HomepageProjectList(props) {
-  const main = useRef();
+  const main = useRef(null);
 
   // ScrollTrigger video play
   useLayoutEffect(() => {
@@ -26,7 +26,7 @@ export default function HomepageProjectList(props) {
   }, []);
 
   return (
-    <div className="recent-project relative flex h-full flex-col items-center gap-52 py-64">
+    <div className="recent-project relative flex h-full flex-col items-center gap-52 py-64 2xl:gap-[15vw] xl:gap-[12.5vw]">
       <Project
         darkMode={{
           dark: props.dark,
