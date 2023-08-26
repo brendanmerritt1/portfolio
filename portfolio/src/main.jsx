@@ -26,7 +26,7 @@ function Root() {
     }
 
     gsap.ticker.add(update);
-    lenisRef.current?.on("scroll", ScrollTrigger.update());
+    // lenisRef.current?.on("scroll", ScrollTrigger.update());
 
     return () => {
       gsap.ticker.remove(update);

@@ -39,6 +39,7 @@ export default function HomepageProjectList(props) {
         subtitle={"SOFTWARE DEVELOPMENT"}
         title={"Animated Wallpaper Shader"}
         url={"/wallpaper"}
+        pos={"start"}
       />
       <Project
         darkMode={{
@@ -52,6 +53,7 @@ export default function HomepageProjectList(props) {
         subtitle={"WEB DEVELOPMENT"}
         title={"Cloudburst Lawn Sprinkler Systems"}
         url={"/cloudburst"}
+        pos={"end"}
       />
       <Project
         darkMode={{
@@ -65,6 +67,7 @@ export default function HomepageProjectList(props) {
         subtitle={"WEB DEVELOPMENT"}
         title={"Mona Dougani's Portfolio"}
         url={"/mona-portfolio"}
+        pos={"start"}
       />
       <Project
         darkMode={{
@@ -75,6 +78,7 @@ export default function HomepageProjectList(props) {
         subtitle={"WEB DEVELOPMENT"}
         title={"COVID-19 Dashboard"}
         url={"/covid-dashboard"}
+        pos={"end"}
       />
       <Project
         darkMode={{
@@ -88,6 +92,7 @@ export default function HomepageProjectList(props) {
         subtitle={"WEB DEVELOPMENT"}
         title={"IP Tracker Dashboard"}
         url={"/ip-dashboard"}
+        pos={"start"}
       />
       <Project
         darkMode={{
@@ -98,6 +103,7 @@ export default function HomepageProjectList(props) {
         subtitle={"SOFTWARE DEVELOPMENT"}
         title={"Nonogram Game"}
         url={"/nonogram"}
+        pos={"end"}
       />
     </div>
   );
