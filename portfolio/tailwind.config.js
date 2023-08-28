@@ -9,6 +9,8 @@ export default {
       lg: { max: "1024px" },
       md: { max: "768px" },
       sm: { max: "640px" },
+      xs: { max: "428px" },
+      xxs: { max: "320px" },
     },
     extend: {
       colors: {
@@ -41,6 +43,14 @@ export default {
           "0%": { transform: "translateX(-50px)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
+        fadeInRight: {
+          "0%": { transform: "translateX(1000px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        fadeOutRight: {
+          "0%": { transform: "translateX(0)", opacity: "1" },
+          "100%": { transform: "translateX(1000px)", opacity: "0" },
+        },
       },
       animation: {
         "spin-dark": "0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards rotation",
@@ -51,6 +61,10 @@ export default {
           "0.4s cubic-bezier(0, 0, 0.2, 1) forwards rotationArrowC",
         "show-arrow":
           "fadeInLeft 0.4s cubic-bezier(0.550, 0.055, 0.675, 0.190)",
+        "show-navbar":
+          "fadeInRight 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000)",
+        "hide-navbar":
+          "fadeOutRight 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both",
       },
       lineHeight: {
         12: "3rem",

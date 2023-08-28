@@ -111,6 +111,10 @@
     contrast(83%);
 }
 
+#rect-button {
+  display: inline-block;
+}
+
 #pill-button-hover,
 #pill-button-hover-dark,
 #rect-button-hover,

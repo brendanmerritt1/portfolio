@@ -26,7 +26,7 @@ export default function HomepageProjectList(props) {
   }, []);
 
   return (
-    <div className="recent-project relative flex h-full flex-col items-center gap-52 py-64 2xl:gap-[15vw] xl:gap-[12.5vw]">
+    <div className="recent-project relative flex h-full flex-col items-center gap-[11vw] py-64 2xl:gap-[15vw] lg:py-48 lg:gap-[20vw] md:gap-[15vw] sm:gap-36 xs:gap-28 xs:pb-28 xs:pt-12 xxs:pt-16 xxs:gap-20">
       <Project
         darkMode={{
           dark: props.dark,

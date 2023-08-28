@@ -1,22 +1,49 @@
 import { ReactComponent as Heart } from "../assets/Heart.svg";
 import { ReactComponent as Github } from "../assets/Github.svg";
 import { ReactComponent as LinkedIn } from "../assets/LinkedIn.svg";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
 
 export default function Footer(props) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 768 && window.innerWidth > 640);
   const main = useRef();
+
+  const updateMedia = () => {
+    setIsMobile(window.innerWidth <= 640);
+    setIsTablet(window.innerWidth <= 768 && window.innerWidth > 640)
+  };
+
+  useEffect(() => {
+    if (props.dark !== null) {
+      if (props.dark) {
+        document.getElementById("hd").className = "animate-spin-dark";
+      } else {
+        document.getElementById("hd").className = "animate-spin-light";
+      }
+    }
+  }, [props.dark]);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
 
   // ScrollTrigger footer opacity animation
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
+      let start, end;
+      isMobile ? (end = "bottom-=850px") : (end = "30%");
+      isMobile ? (start = "bottom-=1000px") : (start = "5%");
+      isTablet ? (end = "bottom-=950px") : (end = "30%");
+      isTablet ? (start = "bottom-=1100px") : (start = "5%");
       const footer = self.selector("#footer");
       const footer_element = self.selector(".footer-element");
       footer_element.forEach((ele) => {
         gsap.to(ele, {
           scrollTrigger: {
             trigger: footer,
-            start: "5% top",
-            end: "30% top",
+            start: `${start} top`,
+            end: `${end} top`,
             scrub: true,
           },
           autoAlpha: 1,
@@ -25,19 +52,19 @@ export default function Footer(props) {
     }, main);
 
     return () => ctx.revert();
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
       id="footer"
-      className="fixed bottom-0 flex h-16 w-full items-center justify-between px-7"
+      className="fixed bottom-0 flex h-16 w-full items-center justify-between px-7 z-10 xxs:px-5"
       ref={main}
     >
-      <span className="footer-element invisible flex text-xl font-normal text-dark-gray dark:text-lightest-gray xl:text-base">
+      <span className="footer-element invisible flex text-xl font-normal text-dark-gray dark:text-lightest-gray xl:text-base md:text-lg sm:text-sm xxs:text-xs">
         Made with
         <Heart
           id={`${props.dark ? "icon-dark" : "icon-light"}`}
-          className="h-6 px-2 xl:h-5"
+          className="h-6 px-2 xl:h-5 md:h-6 sm:h-4 xxs:h-4"
         />
         in NC
       </span>
@@ -50,7 +77,7 @@ export default function Footer(props) {
         >
           <Github
             id={`${props.dark ? "icon-dark" : "icon-light"}`}
-            className="h-9 cursor-pointer xl:h-8"
+            className="h-9 cursor-pointer xl:h-8 md:h-9 sm:h-7 xxs:h-6"
           />
         </a>
         <a
@@ -61,7 +88,7 @@ export default function Footer(props) {
         >
           <LinkedIn
             id={`${props.dark ? "icon-dark" : "icon-light"}`}
-            className="h-9 cursor-pointer xl:h-8"
+            className="h-9 cursor-pointer xl:h-8 md:h-9 sm:h-7 xxs:h-6"
           />
         </a>
       </div>
