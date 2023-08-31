@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import Homepage from "./pages/Homepage";
+import About from "./pages/About";
 import ProjectDescription from "./pages/ProjectDescription";
 import {
   createBrowserRouter,
@@ -39,7 +40,7 @@ function Root() {
         <Route path="/" element={<Homepage dark={dark} setDark={setDark} />} />
         <Route
           path="/about"
-          element={<Homepage dark={dark} setDark={setDark} />}
+          element={<About dark={dark} setDark={setDark} />}
         />
         <Route
           path="/wallpaper"

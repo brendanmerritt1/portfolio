@@ -32,9 +32,9 @@ export default function Footer(props) {
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
       let start, end;
-      isMobile ? (end = "bottom-=850px") : (end = "30%");
+      isMobile ? (end = "bottom-=850px") : (end = "50%");
       isMobile ? (start = "bottom-=1000px") : (start = "5%");
-      isTablet ? (end = "bottom-=950px") : (end = "30%");
+      isTablet ? (end = "bottom-=950px") : (end = "50%");
       isTablet ? (start = "bottom-=1100px") : (start = "5%");
       const footer = self.selector("#footer");
       const footer_element = self.selector(".footer-element");
