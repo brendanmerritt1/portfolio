@@ -5,12 +5,14 @@ import { useLayoutEffect, useRef, useState, useEffect } from "react";
 
 export default function Footer(props) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 640);
-  const [isTablet, setIsTablet] = useState(window.innerWidth <= 768 && window.innerWidth > 640);
+  const [isTablet, setIsTablet] = useState(
+    window.innerWidth <= 768 && window.innerWidth > 640,
+  );
   const main = useRef();
 
   const updateMedia = () => {
     setIsMobile(window.innerWidth <= 640);
-    setIsTablet(window.innerWidth <= 768 && window.innerWidth > 640)
+    setIsTablet(window.innerWidth <= 768 && window.innerWidth > 640);
   };
 
   useEffect(() => {
@@ -32,10 +34,16 @@ export default function Footer(props) {
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
       let start, end;
-      isMobile ? (end = "bottom-=850px") : (end = "50%");
-      isMobile ? (start = "bottom-=1000px") : (start = "5%");
-      isTablet ? (end = "bottom-=950px") : (end = "50%");
-      isTablet ? (start = "bottom-=1100px") : (start = "5%");
+      if (isMobile) {
+        start = "bottom-=1000px";
+        end = "bottom-=1000px";
+      } else if (isTablet) {
+        start = "bottom-=1100px";
+        end = "bottom-=1100px";
+      } else {
+        start = "5%";
+        end = "50%";
+      }
       const footer = self.selector("#footer");
       const footer_element = self.selector(".footer-element");
       footer_element.forEach((ele) => {
@@ -57,7 +65,7 @@ export default function Footer(props) {
   return (
     <div
       id="footer"
-      className="fixed bottom-0 flex h-16 w-full items-center justify-between px-7 z-10 xxs:px-5"
+      className="fixed bottom-0 z-10 flex h-16 w-full items-center justify-between px-7 xxs:px-5"
       ref={main}
     >
       <span className="footer-element invisible flex text-xl font-normal text-dark-gray dark:text-lightest-gray xl:text-base md:text-lg sm:text-sm xxs:text-xs">

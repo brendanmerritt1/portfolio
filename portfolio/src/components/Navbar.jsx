@@ -15,7 +15,7 @@ export default function Navbar(props) {
 
   const updateMedia = () => {
     setMobileNavbar(window.innerWidth <= 1024);
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth > 1024 && mobileNavbarOpen) {
       setMobileNavbarOpen(false);
     }
   };

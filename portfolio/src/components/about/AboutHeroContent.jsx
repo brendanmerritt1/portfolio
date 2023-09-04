@@ -25,12 +25,18 @@ export default function AboutHeroContent() {
   }, []);
 
   return (
-    <div className="flex h-screen items-center pl-[15%]">
+    <div className="flex h-screen items-center pl-[15%] xl:pl-[8%] md:justify-center md:p-0 md:pt-[25rem] xs:pt-[15rem]">
       <div ref={main} id="hero" className="flex flex-col">
-        <span className="hero-element w-fit text-3xl font-light text-lightest-gray dark:text-lighter-gray">
+        <span
+          className={`hero-element w-fit text-3xl font-light text-lightest-gray dark:text-lighter-gray 3xl:text-2xl 
+                      xl:text-[2vw] lg:text-[2.75vw] md:text-[3.5vw] sm:text-[5vw] xs:text-[5.5vw]`}
+        >
           ABOUT
         </span>
-        <span className="hero-element w-fit text-6xl font-medium text-lighter-gray dark:text-lightest-gray">
+        <span
+          className={`hero-element w-fit text-6xl font-medium text-lighter-gray dark:text-lightest-gray 3xl:text-5xl 
+                      xl:text-[3.5vw] lg:text-[4.25vw] md:text-[5.5vw] sm:text-[7vw] xs:text-[7.5vw]`}
+        >
           Brendan Merritt
         </span>
         <Earth />
