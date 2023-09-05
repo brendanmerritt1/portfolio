@@ -9,7 +9,7 @@ export default function Homepage(props) {
     <div className="flex h-full flex-col overflow-y-auto overflow-x-hidden bg-off-white dark:bg-darker-gray">
       <div className="h-screen">
         <Navbar dark={props.dark} setDark={props.setDark} colors={colors} />
-        <HomepageHeroContent dark={props.dark} colors={colors} lenis={props.lenis} />
+        <HomepageHeroContent dark={props.dark} colors={colors} />
         <Footer dark={props.dark} />
       </div>
       <HomepageProjectList dark={props.dark} setDark={props.setDark} />

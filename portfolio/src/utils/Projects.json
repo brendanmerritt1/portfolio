@@ -1,0 +1,130 @@
+{
+  "projects": [
+    {
+      "id": 5,
+      "name": "wallpaper",
+      "subtitle": "PROJECT // 2023",
+      "title": "Animated Wallpaper Shader",
+      "hashtags": ["#Dev", "#WebGL", "#C++", "#Software", "#Shader"],
+      "linkTitles": ["ShaderToy", "Github"],
+      "links": [
+        "https://www.shadertoy.com/view/Dtlyzj",
+        "https://github.com/brendanmerritt1/ray-tracer"
+      ],
+      "paragraphs": [
+        "With the goal of creating an animated wallpaper for my desktop, I created a solar system shader with C++ and GLSL to begin my journey into procedural graphics. ",
+        "I began with the resources from the book 'Ray Tracing In One Weekend' by Peter Shirley, and used this knowledge to create a ray tracer from scratch along with the procedurally generated textures needed to create this shader. With help from the abundance of resources from Inigo Quilez, the founder of ShaderToy, I was able to create a stunning animated shader that I imported into Wallpaper Engine to run on my desktop. ",
+        "The math background needed for this project included vector algebra, basic algorithms, dot products, cross products, and the quadratic formula. Additionally, I used hash functions, noise algorithms, Fractal Brownian motion, and Spherical Fibonacci points to create the detailed procedurally generated textures."
+      ],
+      "content": [
+        "/solar-system-wallpaper-video.webm",
+        "/solar-system-wallpaper-video.mp4",
+        "/wallpaper-shader-1.jpg"
+      ],
+      "alts": ["Wallpaper shader on desktop"]
+    },
+    {
+      "id": 4,
+      "name": "cloudburst",
+      "subtitle": "FREELANCE // 2022-23",
+      "title": "Cloudburst Sprinklers",
+      "hashtags": ["#Dev", "#Web", "#Responsive", "#React", "#Node", "#VPS"],
+      "linkTitles": ["Website", "Github"],
+      "links": [
+        "https://cloudburstsprinkler.com/",
+        "https://github.com/brendanmerritt1/cloudburst-sprinkler"
+      ],
+      "paragraphs": [
+        "Using React and Node, I developed a full-stack website for the landscaping company Cloudburst Lawn Sprinkler Systems who serve the Delaware, Pennsylvania, and Maryland areas. ",
+        "The website features services offered by the company as well as a custom contact form and job application form. The goal for the reachability of this website was to increase the monthly impressions from 3,000 to over 5,000, which we greatly exceeded. It was deployed to an Nginx server running Ubuntu. ",
+        "I was the sole developer for this freelance project, handling the implementation, compatibility, deployment, and SEO of the website. I worked with the design lead Deanna Forrest, who helped design the layouts of each individual page across all screen sizes, as well as the overall user experience. "
+      ],
+      "content": [
+        "/cloudburst-video.webm",
+        "/cloudburst-video.mp4",
+        "/cloudburst-commercial-page.jpg"
+      ],
+      "alts": ["The commercial page of cloudburstsprinkler.com"]
+    },
+    {
+      "id": 3,
+      "name": "mona-portfolio",
+      "subtitle": "FREELANCE // 2023",
+      "title": "Mona Dougani's Portfolio",
+      "hashtags": ["#Dev", "#Web", "#Responsive", "#WordPress"],
+      "linkTitles": ["Website"],
+      "links": ["https://monadougani.com/"],
+      "paragraphs": [
+        "This website was built as a journalism portfolio for a friend with the goal of getting familiarized with WordPress. ",
+        "An Elementor template was used as a starting point for the general layout, and the color scheme, content, and layout was customized to her liking. Fading and sliding animations were used often for the navbar as well as the different sections of the website. ",
+        "The website was tailored to her personality while also highlighting her numerous writings and work experience as a talented journalist in the making. "
+      ],
+      "content": [
+        "/mona-portfolio-video.webm",
+        "/mona-portfolio-video.mp4",
+        "/mona-portfolio.jpg"
+      ],
+      "alts": ["Mona Dougani's portfolio"]
+    },
+    {
+      "id": 2,
+      "name": "covid-dashboard",
+      "subtitle": "PROJECT // 2022",
+      "title": "COVID-19 Dashboard",
+      "hashtags": ["#Dev", "#Web", "#React", "#Node", "#SQLite", "#APIs"],
+      "linkTitles": ["Website", "Github"],
+      "links": [
+        "https://covid-dashboard-oivi.onrender.com/",
+        "https://github.com/brendanmerritt1/a99-achernar-covid"
+      ],
+      "paragraphs": [
+        "Originally made for a school final project, the COVID-19 dashboard highlights statistics and corresponding visualizations for the virus in the middle of the pandemic. ",
+        "It displays COVID-19 information for the state of North Carolina through various graphs and tables, both at a state and county level. A SQLite database was set up to manage the COVID data, account info, and access logs. Data from the 'News' tab is pulled from the Bing News Search API with the query 'Coronavirus'. ",
+        "This website was created in a group of 3 other teammates who all helped to customize the layout, functionality, and server-side logic of the application. "
+      ],
+      "content": [
+        "/covid-19-video.webm",
+        "/covid-19-video.mp4",
+        "/covid-dashboard.jpg"
+      ],
+      "alts": ["COVID-19 dashboard news tab"]
+    },
+    {
+      "id": 1,
+      "name": "ip-dashboard",
+      "subtitle": "PROJECT // 2022",
+      "title": "IP Tracker Dashboard",
+      "hashtags": ["#Dev", "#Web", "#Responsive", "#Vue.js", "#Node", "#APIs"],
+      "linkTitles": ["Website", "Github"],
+      "links": [
+        "https://ip-tracker-map.onrender.com/",
+        "https://github.com/brendanmerritt1/ip-tracker-map"
+      ],
+      "paragraphs": [
+        "This IP tracker dashboard was created to gain familiarity with the Vue.js framework, as well as to become more comfortable working with public APIs and responsive layouts across multiple screen sizes. ",
+        "It uses Mapbox's API along with Leaflet.js to display an interactive map that places pins on searched public IP addresses. IPIFY's geolocation API was used to fetch the location, timezone, and ISP from each submitted IP address. ",
+        "The functional aspect of the website was focused on more than the visual aspect due to the original goal of the project. "
+      ],
+      "content": [
+        "/ip-tracker-video.webm",
+        "/ip-tracker-video.mp4",
+        "/ip-tracker.jpg"
+      ],
+      "alts": ["IP tracker dashboard"]
+    },
+    {
+      "id": "0",
+      "name": "nonogram",
+      "subtitle": "PROJECT // 2021",
+      "title": "Nonogram Puzzle",
+      "hashtags": ["#Dev", "#Software", "#GUI", "#JavaFX", "#JRE"],
+      "linkTitles": ["Github"],
+      "links": ["https://github.com/brendanmerritt1/COMP301-Final-Project"],
+      "paragraphs": [
+        "The nonogram puzzle GUI was originally created as an individual school final project for a class centered around Java and OOP principles. ",
+        "It uses JavaFX to create a model-view-controller GUI application that can be run on multiple operating systems due to its dependency on the Java Runtime Environment. There are 5 pre-made puzzles packaged in the application, and each gives a 'success' pop-up when the puzzle is solved. "
+      ],
+      "content": ["/nonogram-video.webm", "/nonogram-video.mp4"]
+    }
+  ]
+}

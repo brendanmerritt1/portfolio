@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Homepage from "./pages/Homepage";
 import About from "./pages/About";
 import ProjectDescription from "./pages/ProjectDescription";
+import { ScrollRestoration } from "react-router-dom";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -36,38 +37,78 @@ function Root() {
 
   return (
     <ReactLenis ref={lenisRef} root autoRaf={false} options={{ duration: 3 }}>
-      <Routes>
-        <Route path="/" element={<Homepage dark={dark} setDark={setDark} />} />
-        <Route
-          path="/about"
-          element={<About dark={dark} setDark={setDark} />}
-        />
-        <Route
-          path="/wallpaper"
-          element={<ProjectDescription dark={dark} setDark={setDark} />}
-        />
-        <Route
-          path="/cloudburst"
-          element={<Homepage dark={dark} setDark={setDark} />}
-        />
-        <Route
-          path="/mona-portfolio"
-          element={<Homepage dark={dark} setDark={setDark} />}
-        />
-        <Route
-          path="/covid-dashboard"
-          element={<Homepage dark={dark} setDark={setDark} />}
-        />
-        <Route
-          path="/ip-dashboard"
-          element={<Homepage dark={dark} setDark={setDark} />}
-        />
-        <Route
-          path="/nonogram"
-          element={<Homepage dark={dark} setDark={setDark} />}
-        />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={<Homepage dark={dark} setDark={setDark} />}
+          />
+          <Route
+            path="/about"
+            element={<About dark={dark} setDark={setDark} />}
+          />
+          <Route
+            path="/wallpaper"
+            element={
+              <ProjectDescription
+                dark={dark}
+                setDark={setDark}
+                project={"wallpaper"}
+              />
+            }
+          />
+          <Route
+            path="/cloudburst"
+            element={
+              <ProjectDescription
+                dark={dark}
+                setDark={setDark}
+                project={"cloudburst"}
+              />
+            }
+          />
+          <Route
+            path="/mona-portfolio"
+            element={
+              <ProjectDescription
+                dark={dark}
+                setDark={setDark}
+                project={"mona-portfolio"}
+              />
+            }
+          />
+          <Route
+            path="/covid-dashboard"
+            element={
+              <ProjectDescription
+                dark={dark}
+                setDark={setDark}
+                project={"covid-dashboard"}
+              />
+            }
+          />
+          <Route
+            path="/ip-dashboard"
+            element={
+              <ProjectDescription
+                dark={dark}
+                setDark={setDark}
+                project={"ip-dashboard"}
+              />
+            }
+          />
+          <Route
+            path="/nonogram"
+            element={
+              <ProjectDescription
+                dark={dark}
+                setDark={setDark}
+                project={"nonogram"}
+              />
+            }
+          />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        <ScrollRestoration />
     </ReactLenis>
   );
 }

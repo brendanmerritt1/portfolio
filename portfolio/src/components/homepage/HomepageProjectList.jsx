@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useEffect } from "react";
 import Project from "./HomepageProject";
 
 export default function HomepageProjectList(props) {
@@ -26,7 +26,7 @@ export default function HomepageProjectList(props) {
   }, []);
 
   return (
-    <div className="recent-project relative flex h-full flex-col items-center gap-[11vw] py-64 2xl:gap-[15vw] lg:py-48 lg:gap-[20vw] md:gap-[15vw] sm:gap-36 xs:gap-28 xs:pb-28 xs:pt-12 xxs:pt-16 xxs:gap-20">
+    <div className="recent-project relative flex h-full flex-col items-center gap-[11vw] py-64 2xl:gap-[15vw] lg:gap-[20vw] lg:py-48 md:gap-[15vw] sm:gap-36 xs:gap-28 xs:pb-28 xs:pt-12 xxs:gap-20 xxs:pt-16">
       <Project
         darkMode={{
           dark: props.dark,
