@@ -102,7 +102,7 @@ export default function AboutMainContent(props) {
           tortas, or tteok-bokki!
         </span>
       </div>
-      <div className="flex w-full justify-evenly px-[18vw] 3xl:px-[10rem] xl:px-[8rem] lg:px-[2rem] md:px-0 xs:flex-col xs:px-8 xs:gap-8">
+      <div className="flex w-full justify-evenly px-[18vw] 3xl:px-[10rem] xl:px-[8rem] lg:px-[7rem] md:px-[5rem] sm:px-[2rem] xs:flex-col xs:px-8 xs:gap-8">
         <img
           src="/grad_1.jpg"
           alt="Brendan graduation 1"

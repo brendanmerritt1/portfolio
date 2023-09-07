@@ -1,5 +1,5 @@
 import { useRef, useLayoutEffect } from "react";
-import Earth from "./Earth";
+import Ramen from "../projects/Ramen";
 
 export default function AboutHeroContent() {
   // ScrollTrigger hero opacity animation
@@ -39,7 +39,7 @@ export default function AboutHeroContent() {
         >
           Brendan Merritt
         </span>
-        <Earth />
+        <Ramen />
       </div>
     </div>
   );

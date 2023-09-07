@@ -20,7 +20,7 @@ export default function EarthModel(props) {
         receiveShadow
         geometry={nodes.Sphere_Material002_0.geometry}
         material={materials["Material.002"]}
-        rotation={[-Math.PI/2, -0.35, 0]}
+        rotation={[-Math.PI/2.5, 0.2, 0]}
         scale={1}
       />
     </group>
