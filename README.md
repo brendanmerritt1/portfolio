@@ -9,5 +9,6 @@ A portfolio to highlight all my past freelance experience, work experience, and 
     <li>Tailwind</li>
     <li>Three.js</li>
     <li>React Three Fiber</li>
+    <li>GSAP</li>
     <li>Lenis Scroll</li>
 </ul>
