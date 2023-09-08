@@ -11,7 +11,7 @@ import { useGLTF } from "@react-three/drei";
 
 export default function MountainModel(props) {
   const groupRef = useRef();
-  const { nodes, materials } = useGLTF("/mountain.glb");
+  const { nodes, materials } = useGLTF("/MountainHome.glb");
   return (
     <group ref={groupRef} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -50,4 +50,4 @@ export default function MountainModel(props) {
   );
 }
 
-useGLTF.preload("/mountain.glb");
+useGLTF.preload("/MountainHome.glb");
