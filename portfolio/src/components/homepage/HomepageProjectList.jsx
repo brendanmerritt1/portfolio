@@ -1,30 +1,6 @@
-import { useLayoutEffect, useRef, useEffect } from "react";
 import Project from "./HomepageProject";
 
 export default function HomepageProjectList(props) {
-  const main = useRef(null);
-
-  // ScrollTrigger video play
-  useLayoutEffect(() => {
-    const videos = gsap.utils.toArray(".video-container");
-    const ctx = gsap.context(() => {
-      videos.forEach((videoDiv) => {
-        let video = videoDiv.querySelector("video");
-        ScrollTrigger.create({
-          trigger: video,
-          start: "center+=50 bottom",
-          end: "center+=50 top",
-          onEnter: () => video.play(),
-          onEnterBack: () => video.play(),
-          onLeave: () => video.pause(),
-          onLeaveBack: () => video.pause(),
-        });
-      });
-    }, main);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <div className="recent-project relative flex h-full flex-col items-center gap-[11vw] py-64 2xl:gap-[15vw] lg:gap-[20vw] lg:py-48 md:gap-[15vw] sm:gap-36 xs:gap-28 xs:pb-28 xs:pt-12 xxs:gap-20 xxs:pt-16">
       <Project

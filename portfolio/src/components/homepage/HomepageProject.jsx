@@ -1,10 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Arrow } from "../../assets/Arrow.svg";
 
 export default function HomepageProject(props) {
   const [project, setProject] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+
+  // ScrollTrigger video play
+  const main = useRef(null);
+  useLayoutEffect(() => {
+    const videos = gsap.utils.toArray(".video-container");
+    const ctx = gsap.context(() => {
+      videos.forEach((videoDiv) => {
+        let video = videoDiv.querySelector("video");
+        ScrollTrigger.create({
+          trigger: video,
+          start: "center+=50 bottom",
+          end: "center+=50 top",
+          onEnter: () => video.play(),
+          onEnterBack: () => video.play(),
+          onLeave: () => video.pause(),
+          onLeaveBack: () => video.pause(),
+        });
+      });
+    }, main);
+
+    return () => ctx.revert();
+  }, []);
 
   const updateMedia = () => {
     setIsDesktop(window.innerWidth > 1024);
@@ -27,7 +49,7 @@ export default function HomepageProject(props) {
       >
         <div className="flex gap-[6vw] 2xl:gap-[4vw] lg:flex-col lg:px-10 sm:max-w-[83vw] xs:max-w-[90vw]">
           <div className="video-container max-w-3xl 3xl:max-w-[40vw] 2xl:max-w-[37.5vw] xl:max-w-[40vw] lg:max-w-[50vw] md:max-w-[70vw]">
-            <video muted loop playsInline className="rounded-xl">
+            <video muted loop playsInline className="rounded-xl" ref={main}>
               <source src={props.source.webm} type="video/webm" />
               <source src={props.source.mp4} type="video/mp4" />
             </video>
