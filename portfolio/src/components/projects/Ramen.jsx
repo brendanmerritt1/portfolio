@@ -8,10 +8,14 @@ import { RamenModel } from "../../utils/RamenModel";
 function Frame(props) {
   useFrame((state) => {
     if (props.orbitControlsRef.current) {
-      const { x } = state.mouse;
-      props.orbitControlsRef.current.setAzimuthalAngle(
-        Math.PI + x * -angleToRadians(30),
-      );
+      if (props.width > 1024) {
+        const { x } = state.mouse;
+        props.orbitControlsRef.current.setAzimuthalAngle(
+          Math.PI + x * -angleToRadians(30),
+        );
+      } else {
+        props.orbitControlsRef.current.setAzimuthalAngle(Math.PI);
+      }
       props.orbitControlsRef.current.update();
     }
   });
@@ -99,7 +103,7 @@ export default function Ramen() {
             maxPolarAngle={Math.PI / 2}
             target={target}
           />
-          {width > 1024 && <Frame orbitControlsRef={orbitControlsRef} />}
+          <Frame orbitControlsRef={orbitControlsRef} width={width}/>
           <RamenModel />
         </Suspense>
       </Canvas>
