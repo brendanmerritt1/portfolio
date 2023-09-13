@@ -37,7 +37,7 @@
       "paragraphs": [
         "Using React and Node, I developed a full-stack website for the landscaping company Cloudburst Lawn Sprinkler Systems who serve the Delaware, Pennsylvania, and Maryland areas. ",
         "The website features services offered by the company as well as a custom contact form and job application form. The goal for the reachability of this website was to increase the monthly impressions from 3,000 to over 5,000, which we greatly exceeded. It was deployed to an Nginx server running Ubuntu. ",
-        "I was the sole developer for this freelance project, handling the implementation, compatibility, deployment, and SEO of the website. I worked with the design lead Deanna Forrest, who helped design the layouts of each individual page across all screen sizes, as well as the overall user experience. "
+        "I was the sole developer for this freelance project, handling the implementation, compatibility, deployment, and SEO of the website. I worked with a design lead who helped to design the layouts of each individual page across all screen sizes, as well as the overall user experience. "
       ],
       "content": [
         "/cloudburst-video.webm",

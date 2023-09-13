@@ -36,7 +36,7 @@ export default function AboutMainContent(props) {
               />
             </Link>
             <Link
-              to={"mailto:brendanmerritt1@gmail.com"}
+              to={"https://github.com/brendanmerritt1"}
               id="underline"
               className="flex w-fit cursor-pointer gap-1 after:bg-light-gray"
             >
@@ -47,7 +47,7 @@ export default function AboutMainContent(props) {
               />
             </Link>
             <Link
-              to={"mailto:brendanmerritt1@gmail.com"}
+              to={"https://www.linkedin.com/in/brendanmerritt1/"}
               id="underline"
               className="flex w-fit cursor-pointer gap-1 after:bg-light-gray"
             >
