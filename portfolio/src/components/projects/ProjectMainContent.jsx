@@ -78,7 +78,7 @@ export default function ProjectMainContent(props) {
         </div>
       </div>
       <div className="video-container max-w-[50vw] lg:max-w-[60vw] sm:max-w-[70vw] xs:max-w-[80vw]">
-        <video muted loop playsInline className="rounded-xl">
+        <video muted loop playsInline className="rounded-xl" ref={main}>
           <source src={props.project.content[0]} type="video/webm" />
           <source src={props.project.content[1]} type="video/mp4" />
         </video>

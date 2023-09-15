@@ -23,6 +23,7 @@ export default defineConfig({
           ...renderChunks(dependencies),
         },
       },
+      external: ["fsevents"]
     },
   },
 });
