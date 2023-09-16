@@ -79,7 +79,7 @@ export default function AboutMainContent(props) {
       </div>
       <div className="w-[30vw] xl:w-[35vw] lg:w-[45vw] md:w-[50vw] xs:w-[65vw]">
         <img
-          src="/kitty.jpg"
+          src="/kitty.webp"
           alt="Brendan's cat, Luna"
           className="rounded-xl"
         />
@@ -104,12 +104,12 @@ export default function AboutMainContent(props) {
       </div>
       <div className="flex w-full justify-evenly px-[18vw] 3xl:px-[10rem] xl:px-[8rem] lg:px-[7rem] md:px-[5rem] sm:px-[2rem] xs:flex-col xs:px-8 xs:gap-8">
         <img
-          src="/grad_1.jpg"
+          src="/grad_1.webp"
           alt="Brendan graduation 1"
           className="w-[25vw] rounded-xl lg:w-[30vw] md:w-[33vw] sm:w-[38vw] xs:w-[50vw]"
         />
         <img
-          src="/grad_2.jpg"
+          src="/grad_2.webp"
           alt="Brendan graduation 2"
           className="w-[25vw] rounded-xl lg:w-[30vw] md:w-[33vw] sm:w-[38vw] xs:w-[50vw] ml-auto"
         />

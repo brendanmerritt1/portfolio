@@ -2,7 +2,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { angleToRadians } from "../../utils/angle.js";
-import { CovidModel } from "../../utils/CovidModel";
+import CovidModel from "../../utils/CovidModel.jsx";
 
 // Allows covid rotation to a specific degree
 function Frame(props) {

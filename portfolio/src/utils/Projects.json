@@ -19,7 +19,7 @@
       "content": [
         "/solar-system-wallpaper-video.webm",
         "/solar-system-wallpaper-video.mp4",
-        "/wallpaper-shader-1.jpg"
+        "/wallpaper-shader-1.webp"
       ],
       "alts": ["Wallpaper shader on desktop"]
     },
@@ -42,7 +42,7 @@
       "content": [
         "/cloudburst-video.webm",
         "/cloudburst-video.mp4",
-        "/cloudburst-commercial-page.jpg"
+        "/cloudburst-commercial-page.webp"
       ],
       "alts": ["The commercial page of cloudburstsprinkler.com"]
     },
@@ -62,7 +62,7 @@
       "content": [
         "/mona-portfolio-video.webm",
         "/mona-portfolio-video.mp4",
-        "/mona-portfolio.jpg"
+        "/mona-portfolio.webp"
       ],
       "alts": ["Mona Dougani's portfolio"]
     },
@@ -85,7 +85,7 @@
       "content": [
         "/covid-19-video.webm",
         "/covid-19-video.mp4",
-        "/covid-dashboard.jpg"
+        "/covid-dashboard.webp"
       ],
       "alts": ["COVID-19 dashboard news tab"]
     },
@@ -108,7 +108,7 @@
       "content": [
         "/ip-tracker-video.webm",
         "/ip-tracker-video.mp4",
-        "/ip-tracker.jpg"
+        "/ip-tracker.webp"
       ],
       "alts": ["IP tracker dashboard"]
     },

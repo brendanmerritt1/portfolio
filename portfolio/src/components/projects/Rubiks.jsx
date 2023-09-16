@@ -2,7 +2,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { angleToRadians } from "../../utils/angle.js";
-import { RubiksModel } from "../../utils/RubiksModel";
+import RubiksModel from "../../utils/RubiksModel.jsx";
 
 // Allows rubiks rotation to a specific degree
 function Frame(props) {
